@@ -105,3 +105,12 @@ dist
 
 /build
 .history
+
+# Webstorm
+/.idea/*
+!/.idea/vcs.xml
+!/.idea/modules.xml
+!/.idea/codeStyles/
+!/.idea/inspectionProfiles/
+!/.idea/runConfigurations/
+!/.idea/prettier.xml
