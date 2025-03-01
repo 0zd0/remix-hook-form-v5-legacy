@@ -33,10 +33,10 @@
             "executor": "nx:run-commands",
             "options": {
                 "commands": [
-                    "nx affected --target=prettier",
-                    "nx affected --target=eslint",
-                    "nx affected --target=test",
-                    "nx affected --target=ts"
+                    "nx run-many --target=prettier",
+                    "nx run-many --target=eslint",
+                    "nx run-many --target=test",
+                    "nx run-many --target=ts"
                 ],
                 "parallel": true
             }
