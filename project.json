@@ -1,0 +1,45 @@
+{
+    "name": "remix-hook-form-v5-legacy",
+    "$schema": "node_modules/nx/schemas/project-schema.json",
+    "targets": {
+        "eslint": {
+            "executor": "@nx/eslint:lint",
+            "options": {
+                "lintFilePatterns": [
+                    "src/**/*.ts",
+                    "src/**/*.tsx"
+                ]
+            }
+        },
+        "test": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "vitest run"
+            }
+        },
+        "ts": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "tsc"
+            }
+        },
+        "prettier": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "prettier ./src --check"
+            }
+        },
+        "pre-commit": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "nx affected --target=prettier",
+                    "nx affected --target=eslint",
+                    "nx affected --target=test",
+                    "nx affected --target=ts"
+                ],
+                "parallel": true
+            }
+        }
+    }
+}

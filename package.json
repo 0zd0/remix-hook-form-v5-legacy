@@ -1,105 +1,115 @@
 {
-  "name": "remix-hook-form-v5-legacy",
-  "version": "1.0.0",
-  "packageManager": "pnpm@10.5.2",
-  "description": "Fork v5 with critical fixes for Remix 6",
-  "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "exports": {
-    ".": {
-      "import": {
-        "import": "./dist/index.js",
-        "default": "./dist/index.js",
-        "types": "./dist/index.d.ts"
-      },
-      "require": {
-        "import": "./dist/index.cjs",
-        "require": "./dist/index.cjs",
-        "default": "./dist/index.cjs",
-        "types": "./dist/index.d.cts"
-      },
-      "types": "./dist/index.d.ts"
+    "name": "remix-hook-form-v5-legacy",
+    "version": "1.0.0",
+    "packageManager": "pnpm@10.5.2",
+    "description": "Fork v5 with critical fixes for Remix 6",
+    "type": "module",
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "exports": {
+        ".": {
+            "import": {
+                "import": "./dist/index.js",
+                "default": "./dist/index.js",
+                "types": "./dist/index.d.ts"
+            },
+            "require": {
+                "import": "./dist/index.cjs",
+                "require": "./dist/index.cjs",
+                "default": "./dist/index.cjs",
+                "types": "./dist/index.d.cts"
+            },
+            "types": "./dist/index.d.ts"
+        }
+    },
+    "typings": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "workspaces": [
+        "src/testing-app",
+        "."
+    ],
+    "scripts": {
+        "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+        "remix-dev": "npm run dev -w src/testing-app",
+        "build:dev": "tsup src/index.ts --format cjs,esm --dts",
+        "build:dev:watch": "npm run build:dev -- --watch",
+        "dev": "npm-run-all -s build:dev -p remix-dev build:dev:watch",
+        "vite": "npm run build --watch -m development",
+        "prepublishOnly": "nx build",
+        "test": "nx run test",
+        "tsc": "nx run ts",
+        "lint": "nx run lint",
+        "lint:fix": "nx run lint -- --fix",
+        "prettier": "nx run prettier",
+        "prettier:fix": "nx run prettier -- --write",
+        "format-code": "npm run prettier:fix & npm run lint:fix",
+        "prepare": "husky",
+        "pre-commit": "nx run-many --target=pre-commit"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/0zd0/remix-hook-form-v5-legacy.git"
+    },
+    "keywords": [
+        "React",
+        "Remix",
+        "Remix.run",
+        "react-hook-form",
+        "hooks",
+        "forms"
+    ],
+    "author": "Alem Tuzlak",
+    "maintainers": [
+        "Alem Tuzlak",
+        "0zd0"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/0zd0/remix-hook-form-v5-legacy/issues"
+    },
+    "homepage": "https://github.com/0zd0/remix-hook-form-v5-legacy#readme",
+    "peerDependencies": {
+        "@remix-run/react": "^2.0.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-hook-form": "^7.51.0"
+    },
+    "readme": "https://github.com/0zd0/remix-hook-form-v5-legacy#readme",
+    "devDependencies": {
+        "@eslint/js": "^9.21.0",
+        "@hookform/resolvers": "^3.1.0",
+        "@nx/eslint": "20.4.6",
+        "@nx/vite": "20.4.6",
+        "@nx/web": "20.4.6",
+        "@nx/workspace": "^20.4.6",
+        "@remix-run/node": "^2.3.0",
+        "@remix-run/react": "^2.3.0",
+        "@testing-library/react": "^14.0.0",
+        "@types/node": "^18.15.11",
+        "@types/react": "^18.0.34",
+        "@vitest/coverage-v8": "^2.0.3",
+        "@vitest/ui": "^1.3.1",
+        "babel-eslint": "^10.1.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-prettier": "^5.0.0",
+        "happy-dom": "^9.5.0",
+        "husky": "^9.1.7",
+        "npm-run-all": "^4.1.5",
+        "nx": "20.4.6",
+        "prettier": "^3.0.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-hook-form": "^7.51.0",
+        "remix-development-tools": "^3.1.1",
+        "rollup": "^3.20.2",
+        "rollup-plugin-typescript2": "^0.34.1",
+        "tsup": "^7.2.0",
+        "typescript": "^5.0.4",
+        "typescript-eslint": "^8.25.0",
+        "vite": "^4.2.1",
+        "vitest": "^2.0.3",
+        "zod": "^3.21.4"
     }
-  },
-  "typings": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "workspaces": [
-    "src/testing-app",
-    "."
-  ],
-  "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
-    "remix-dev": "npm run dev -w src/testing-app",
-    "build:dev": "tsup src/index.ts --format cjs,esm --dts",
-    "build:dev:watch": "npm run build:dev -- --watch",
-    "dev": "npm-run-all -s build:dev -p remix-dev build:dev:watch",
-    "vite": "npm run build --watch -m development",
-    "prepublishOnly": "npm run build",
-    "test": "vitest run",
-    "tsc": "tsc",
-    "validate": "npm run lint && npm run tsc && npm run test",
-    "lint": "eslint \"src/**/*.+(ts|tsx)\"",
-    "lint:fix": "npm run lint -- --fix",
-    "prettier": "prettier src --check",
-    "prettier:fix": "prettier src --write",
-    "format-code": "npm run prettier:fix & npm run lint:fix"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/0zd0/remix-hook-form-v5-legacy.git"
-  },
-  "keywords": [
-    "React",
-    "Remix",
-    "Remix.run",
-    "react-hook-form",
-    "hooks",
-    "forms"
-  ],
-  "author": "Alem Tuzlak",
-  "maintainers": [
-    "Alem Tuzlak",
-    "0zd0"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/0zd0/remix-hook-form-v5-legacy/issues"
-  },
-  "homepage": "https://github.com/0zd0/remix-hook-form-v5-legacy#readme",
-  "peerDependencies": {
-    "@remix-run/react": "^2.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-hook-form": "^7.51.0"
-  },
-  "readme": "https://github.com/0zd0/remix-hook-form-v5-legacy#readme",
-  "devDependencies": {
-    "@hookform/resolvers": "^3.1.0",
-    "@remix-run/node": "^2.3.0",
-    "@remix-run/react": "^2.3.0",
-    "@testing-library/react": "^14.0.0",
-    "@types/node": "^18.15.11",
-    "@types/react": "^18.0.34",
-    "@vitest/coverage-v8": "^2.0.3",
-    "babel-eslint": "^10.1.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "happy-dom": "^9.5.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^3.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-hook-form": "^7.51.0",
-    "remix-development-tools": "^3.1.1",
-    "rollup": "^3.20.2",
-    "rollup-plugin-typescript2": "^0.34.1",
-    "tsup": "^7.2.0",
-    "typescript": "^5.0.4",
-    "vite": "^4.2.1",
-    "vitest": "^2.0.3",
-    "zod": "^3.21.4"
-  }
 }
