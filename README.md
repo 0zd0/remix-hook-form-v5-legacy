@@ -1,31 +1,33 @@
-# remix-hook-form
+# remix-hook-form-v5-legacy
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/Code-Forge-Net/remix-hook-form?style=social)
 ![npm](https://img.shields.io/npm/v/remix-hook-form?style=plastic)
 ![GitHub](https://img.shields.io/github/license/Code-Forge-Net/remix-hook-form?style=plastic)
 ![npm](https://img.shields.io/npm/dy/remix-hook-form?style=plastic) 
 ![npm](https://img.shields.io/npm/dw/remix-hook-form?style=plastic) 
-![GitHub top language](https://img.shields.io/github/languages/top/Code-Forge-Net/remix-hook-form?style=plastic) 
+![GitHub top language](https://img.shields.io/github/languages/top/Code-Forge-Net/remix-hook-form?style=plastic)
 
-Remix-hook-form is a powerful and lightweight wrapper around [react-hook-form](https://react-hook-form.com/) that streamlines the process of working with forms and form data in your [Remix](https://remix.run) applications. With a comprehensive set of hooks and utilities, you'll be able to easily leverage the flexibility of react-hook-form without the headache of boilerplate code.
+## This package is a library support under Remix 2
 
-And the best part? Remix-hook-form has zero dependencies, making it easy to integrate into your existing projects and workflows. Say goodbye to bloated dependencies and hello to a cleaner, more efficient development process with Remix-hook-form. 
+remix-hook-form-v5-legacy is a powerful and lightweight wrapper around [react-hook-form](https://react-hook-form.com/) that streamlines the process of working with forms and form data in your [Remix](https://remix.run) applications. With a comprehensive set of hooks and utilities, you'll be able to easily leverage the flexibility of react-hook-form without the headache of boilerplate code.
+
+And the best part? remix-hook-form-v5-legacy has zero dependencies, making it easy to integrate into your existing projects and workflows. Say goodbye to bloated dependencies and hello to a cleaner, more efficient development process with remix-hook-form-v5-legacy. 
 
 Oh, and did we mention that this is fully Progressively enhanced? That's right, you can use this with or without javascript!
 
 
 ## Install
 
-    npm install remix-hook-form react-hook-form
+    npm install remix-hook-form-v5-legacy react-hook-form
 
 ## Basic usage
 
-Here is an example usage of remix-hook-form. It will work with **and without** JS. Before running the example, ensure to install additional dependencies:
+Here is an example usage of remix-hook-form-v5-legacy. It will work with **and without** JS. Before running the example, ensure to install additional dependencies:
 
     npm install zod @hookform/resolvers
 
 ```ts
-import { useRemixForm, getValidatedFormData } from "remix-hook-form";
+import { useRemixForm, getValidatedFormData } from "remix-hook-form-v5-legacy";
 import { Form } from "@remix-run/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
@@ -409,7 +411,7 @@ If the Remix hook `useActionData` returns an object with `defaultValues` these w
 
 The returned `handleSubmit` function does two additional things
 - The success case is provided by default where when the form is validated by the provided resolver, and it has no errors, it will automatically submit the form to the current route using a POST request. The data will be sent as `formData` to the action function.
-- The data that is sent is automatically wrapped into a formData object and passed to the server ready to be used. Easiest way to consume it is by using the `parseFormData` or `getValidatedFormData` function from the `remix-hook-form` package.
+- The data that is sent is automatically wrapped into a formData object and passed to the server ready to be used. Easiest way to consume it is by using the `parseFormData` or `getValidatedFormData` function from the `remix-hook-form-v5-legacy` package.
 
 **`formState.errors`**
 
@@ -514,16 +516,16 @@ MIT
 
 ## Bugs
 
-If you find a bug, please file an issue on [our issue tracker on GitHub](https://github.com/Code-Forge-Net/remix-hook-form/issues)
+If you find a bug, please file an issue on [our issue tracker on GitHub](https://github.com/Code-Forge-Net/remix-hook-form-v5-legacy/issues)
 
 
 ## Contributing
 
-Thank you for considering contributing to Remix-hook-form! We welcome any contributions, big or small, including bug reports, feature requests, documentation improvements, or code changes.
+Thank you for considering contributing to remix-hook-form-v5-legacy! We welcome any contributions, big or small, including bug reports, feature requests, documentation improvements, or code changes.
 
 To get started, please fork this repository and make your changes in a new branch. Once you're ready to submit your changes, please open a pull request with a clear description of your changes and any related issues or pull requests.
 
-Please note that all contributions are subject to our [Code of Conduct](https://github.com/Code-Forge-Net/remix-hook-form/blob/main/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
+Please note that all contributions are subject to our [Code of Conduct](https://github.com/Code-Forge-Net/remix-hook-form-v5-legacy/blob/main/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
-We appreciate your time and effort in contributing to Remix-hook-form and helping to make it a better tool for the community!
+We appreciate your time and effort in contributing to remix-hook-form-v5-legacy and helping to make it a better tool for the community!
 

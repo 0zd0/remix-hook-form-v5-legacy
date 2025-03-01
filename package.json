@@ -1,8 +1,8 @@
 {
     "name": "remix-hook-form-v5-legacy",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "packageManager": "pnpm@10.5.2",
-    "description": "Fork v5 with critical fixes for Remix 6",
+    "description": "Fork v5 with critical fixes for Remix 2",
     "type": "module",
     "main": "./dist/index.cjs",
     "module": "./dist/index.js",
